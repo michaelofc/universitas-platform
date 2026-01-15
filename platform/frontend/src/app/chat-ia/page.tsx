@@ -27,13 +27,8 @@ export default function ChatIAPage() {
     ]);
     const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-        if (!isAuthenticated) {
-            router.push('/login');
-        }
     }, [isAuthenticated, router]);
-
-    const handleSend = async () => {
+   const handleSend = async () => {
         if (!mensagem.trim() || loading) return;
 
         const userMessage: Message = {
