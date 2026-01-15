@@ -1,0 +1,24 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "platform/frontend/package.json",
+            "use": "@vercel/next"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/api/(.*)",
+            "dest": "platform/backend/server.js"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "platform/frontend/$1"
+        }
+    ],
+    "env": {
+        "DATABASE_URL": "@database_url",
+        "GEMINI_API_KEY": "@gemini_api_key",
+        "JWT_SECRET": "@jwt_secret"
+    }
+}
