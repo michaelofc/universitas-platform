@@ -15,7 +15,6 @@ export default function CiclosPage() {
         },
     });
 
-    if (!isAuthenticated) return null;
 
     return (
         <div className="min-h-screen bg-gray-50">
